@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load pagination_tags %}
+
+{% block contentido %}
+
+{% autopaginate todos 2 %}
+{% for t in todos %}
+<h1>{{ t }} ( {{ t.completed|yesno:"completada,no completada" }} )</h1>
+<ol>
+    {% for i in t.items.all %}
+    <li id="{{ i.id }}" class="{{ i.clase_css }}"><input type="checkbox" class="todo" id="{{ i.id }}" {% if i.hecha %}checked="checked"{% endif %}> {{ i }}</li>
+    {% endfor %}
+
+</ol>
+{% endfor %}
+
+
+<div>
+    {% paginate %}
+</div>
+
+
+{% endblock %}
