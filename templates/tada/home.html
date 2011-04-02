@@ -8,7 +8,10 @@
 <h1>{{ t }} ( {{ t.completed|yesno:"completada,no completada" }} )</h1>
 <ol>
     {% for i in t.items.all %}
-    <li id="{{ i.id }}" class="{{ i.clase_css }}"><input type="checkbox" class="todo" id="{{ i.id }}" {% if i.hecha %}checked="checked"{% endif %}> {{ i }}</li>
+    <li id="{{ i.id }}" class="{{ i.clase_css }}">
+        <input type="checkbox" class="todo_item" id="todo-item_{{ i.id }}" {% if i.hecha %}checked="checked"{% endif %}>
+        <label for="todo-item_{{ i.id }}">{{ i }}</label>
+    </li>
     {% endfor %}
 
 </ol>

@@ -117,6 +117,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tada',
+    'django_extensions',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     'pagination',

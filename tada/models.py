@@ -26,6 +26,13 @@ class TodoItem(models.Model):
     def __unicode__(self):
         return self.descripcion
 
+    def swich(self):
+        if self.hecha:
+            self.hecha = False
+        else:
+            self.hecha = True
+        self.save()
+
     def clase_css(self):
         if self.hecha:
             return "hecha"
